@@ -1,0 +1,29 @@
+{
+  "name": "lens-kiro-crew-app",
+  "version": "0.1.0",
+  "displayName": "Lens Kiro Crew App",
+  "description": "A Kiro Crew app: Lens Kiro Crew App",
+  "author": "lucalc",
+  "agents": [
+    "agents/sample-agent.json"
+  ],
+  "skills": [
+    "skills/sample-skill"
+  ],
+  "tags": [],
+  "backend": {
+    "entryPoint": "backend/server.py",
+    "port": "auto",
+    "healthCheck": "/health"
+  },
+  "ui": {
+    "entry": "dist/index.mjs",
+    "pages": [
+      {
+        "route": "/apps/lens-kiro-crew-app",
+        "label": "Lens Kiro Crew App",
+        "icon": "Package"
+      }
+    ]
+  }
+}
