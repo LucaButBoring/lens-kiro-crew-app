@@ -1,28 +1,42 @@
 {
   "name": "lens-kiro-crew-app",
-  "version": "0.1.0",
-  "displayName": "Lens Kiro Crew App",
-  "description": "A Kiro Crew app: Lens Kiro Crew App",
-  "author": "lucalc",
-  "agents": [
-    "agents/sample-agent.json"
-  ],
-  "skills": [
-    "skills/sample-skill"
-  ],
-  "tags": [],
+  "version": "0.1.2",
+  "displayName": "Lens",
+  "description": "Explore Kiro Crew session history through a local analytics dashboard and read-only SQL.",
+  "author": "Luca Chang",
+  "tags": ["sessions", "analytics", "sql", "productivity"],
+  "agents": ["agents/lens-analyst.json"],
+  "skills": ["skills/lens-sql"],
+  "permissions": {
+    "api": [
+      "/apps/lens-kiro-crew-app/api/status",
+      "/apps/lens-kiro-crew-app/api/catalog",
+      "/apps/lens-kiro-crew-app/api/overview",
+      "/apps/lens-kiro-crew-app/api/slow-queries",
+      "/apps/lens-kiro-crew-app/api/setup",
+      "/apps/lens-kiro-crew-app/api/skill"
+    ],
+    "storage": true
+  },
   "backend": {
     "entryPoint": "backend/server.py",
     "port": "auto",
     "healthCheck": "/health"
+  },
+  "dependencies": {
+    "managedBy": "gateway",
+    "commands": ["python3"]
+  },
+  "platform": {
+    "os": ["linux", "macos"]
   },
   "ui": {
     "entry": "dist/index.mjs",
     "pages": [
       {
         "route": "/apps/lens-kiro-crew-app",
-        "label": "Lens Kiro Crew App",
-        "icon": "Package"
+        "label": "Lens",
+        "icon": "ScanSearch"
       }
     ]
   }
