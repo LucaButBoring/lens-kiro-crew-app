@@ -5068,7 +5068,7 @@ function bo() {
 					color: "var(--muted)",
 					opacity: .6
 				},
-				children: ["Lens build ", "0.1.2"]
+				children: ["Lens build ", "0.1.3"]
 			})
 		]
 	})] });

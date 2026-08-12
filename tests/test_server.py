@@ -139,3 +139,18 @@ def test_overview_counts_only_genuine_skill_read_paths(tmp_path: Path, monkeypat
     assert [
         {**row, "last_read": str(row["last_read"])} for row in result["skill_reads"]
     ] == [{"skill": "real-skill", "reads": 1, "last_read": "2026-01-01"}]
+
+
+def test_installed_sidebar_icon_asset_is_declared_and_valid() -> None:
+    import xml.etree.ElementTree as ET
+
+    manifest = json.loads((ROOT / "app.json").read_text(encoding="utf-8"))
+    page = manifest["ui"]["pages"][0]
+    assert page["iconUrl"] == "lens-icon.svg"
+
+    icon_path = ROOT / "ui" / page["iconUrl"]
+    root = ET.parse(icon_path).getroot()
+    assert root.tag == "{http://www.w3.org/2000/svg}svg"
+    assert root.attrib["viewBox"] == "0 0 24 24"
+    assert root.findall(".//{http://www.w3.org/2000/svg}circle")
+    assert root.findall(".//{http://www.w3.org/2000/svg}path")

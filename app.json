@@ -1,6 +1,6 @@
 {
   "name": "lens-kiro-crew-app",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "displayName": "Lens",
   "description": "Explore Kiro Crew session history through a local analytics dashboard and read-only SQL.",
   "author": "Luca Chang",
@@ -36,7 +36,8 @@
       {
         "route": "/apps/lens-kiro-crew-app",
         "label": "Lens",
-        "icon": "ScanSearch"
+        "icon": "ScanSearch",
+        "iconUrl": "lens-icon.svg"
       }
     ]
   }

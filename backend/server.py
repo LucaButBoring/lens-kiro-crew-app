@@ -20,7 +20,7 @@ if _VENV_PYTHON.is_file() and Path(sys.executable) != _VENV_PYTHON:
 from query_engine import APP_NAME, VIEW_COLUMNS, QueryEngine, QueryError
 
 PORT = int(os.environ.get("PORT", "9100"))
-VERSION = "0.1.2"
+VERSION = "0.1.3"
 API = "/api"
 ENGINE = QueryEngine()
 QUERY_SLOTS = threading.BoundedSemaphore(6)

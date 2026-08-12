@@ -1,0 +1,5 @@
+<!-- BRIEF: Compact Lucide-style magnifying glass for Lens; transparent background, Lens purple stroke, legible at 16px. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#8b3dff" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Lens">
+  <circle id="lens" cx="11" cy="11" r="7"/>
+  <path id="handle" d="m20 20-4.05-4.05"/>
+</svg>
